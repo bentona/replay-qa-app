@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Replay QA App</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h3>Yo</h3>
+
+        <p>The Sinon library relies on stub.crackers which depends on window.cheese being available. Older browsers don't ship with window.cheese since the Cheese Cracker API hasn't been standardized yet. We need to move cheese generation to the server.</p>
+
+        <p>
+          <img src='jimmay.jpg' width='75px'/>
+        </p>
+
+        <hr />
+
+        <form action='index2.html'>
+          <div class="form-group">
+            <input type="text" id='sample-input' class="form-control sample-input" placeholder="Type some stuff here">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type='button' class="btn btn-warning" id='clear-button'>Clear</button>
+        </form>
+
+        <hr />
+
+        <p>
+          Here's a <a href='index2.html'>link</a> to the coolest page on the innnernet
+        </p>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  </body>
+
+  <script type='text/javascript'>
+    $('#clear-button').click(function(){
+      $('#sample-input').val("");
+    });
+  </script>
+</html>
