@@ -21,7 +21,7 @@ exports.listUsers = function(req, res){
 };
 
 exports.authUser = function(req, res){
-  adapter.getDocs('users', {email: req.body.email, password: req.body.password}, function(err, docs){
+  adapter.getDocs('users', {email: req.query.email, password: req.query.password}, function(err, docs){
     if (err || docs) console.error(err);
     res.end(JSON.stringify(docs));
   });
