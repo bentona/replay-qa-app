@@ -1,0 +1,10 @@
+doctype html
+
+html
+  head
+    title Sign In
+  body
+    form(action='/auth' method='post')
+      input(type='text' id='email' placeholder='Email')
+      input(type='password' id='password' placeholder='Password')
+      input(type='submit' id='sign_in' value='Sign In')

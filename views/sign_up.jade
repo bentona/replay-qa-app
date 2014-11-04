@@ -1,0 +1,21 @@
+doctype html
+
+html
+  head
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css")
+    title Sign Up
+  body
+    form(role='form' action='/create_user' method='post')
+      div.form-group
+        input.form-control(type='text' id='email' name='email' placeholder='Email')
+        input.form-control(type='password' id='password' name='password' placeholder='Password')
+        input.form-control(type='text' name ='name' placeholder='Name')
+        input.form-control(type='text' name='timezone' placeholder='Timezone')
+        input.form-control(type='text' name='locale' placeholder='Locale')
+        input.form-control(type='text' name='locale_id' placeholder='Locale_id')
+        input.form-control(type='text' name='organization_id' placeholder='Organization ID')
+        input.form-control(type='text' name='role' placeholder='Role')
+        input.form-control(type='text' name='custom_role_id' placeholder='Custom Role Id')
+        input.form-control(type='text' name='phone' placeholder='Phone')
+        input.form-control(type='checkbox' name='verified' value='verified')
+       input.btn.btn-primary(type='submit' value='Sign Up')
