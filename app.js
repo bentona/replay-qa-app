@@ -1,4 +1,5 @@
-var app         = require('express')();
+var express     = require('express');
+var app         = express();
 var bodyParser  = require('body-parser');
 var routes      = require('./routes');
 var userRoutes  = require('./user_routes');
@@ -6,6 +7,7 @@ var userRoutes  = require('./user_routes');
 app.use(bodyParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
+app.use(express.static('./'));
 
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
