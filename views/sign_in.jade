@@ -1,10 +1,11 @@
-doctype html
+extends ./layout.jade
 
-html
-  head
-    title Sign In
-  body
+block title
+  title Sign In
+
+block content
+  div.col-md-4.col-md-offset-4(style="margin-top: 10px")
     form(action='/auth')
-      input(type='text' id='email' name='email' placeholder='Email')
-      input(type='password' id='password' name='password' placeholder='Password')
-      input(type='submit' id='sign_in' value='Sign In')
+      input.form-control(type='text' id='email' name='email' placeholder='Email')
+      input.form-control(type='password' id='password' name='password' placeholder='Password')
+      input.btn.btn-primary.btn-block(type='submit' id='sign_in' value='Sign In')
