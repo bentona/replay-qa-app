@@ -4,6 +4,7 @@ var MongoClient = mongodb.MongoClient;
 function MongoAdapter(){
   this.dbURL = 'mongodb://localhost:27017';
   this.db = null;
+  this.ObjectID = mongodb.ObjectID;
 }
 
 MongoAdapter.prototype.setUp = function(){
@@ -34,5 +35,12 @@ MongoAdapter.prototype.getDocs = function(collectionName, query, callback){
     })
   });
 };
+
+MongoAdapter.prototype.updateDoc = function(collectionName, filter, update, callback){
+  this.getCollection(collectionName, function(err, collection){
+    if (err) return callback(err);
+    collection.update(filter, update, callback);
+  });
+}
 
 module.exports = MongoAdapter;

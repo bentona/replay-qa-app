@@ -1,0 +1,14 @@
+extends ./layout.jade
+
+block title
+  title #{user.name} Profile
+
+block content
+  div.col-md-4.col-md-offset-4
+    each key in Object.keys(user)
+      if key != '_id'
+        div.form-group
+          label=key
+          input.form-control(type='text' name=key value=user[key])
+    a(href='/users/'+user._id+'/edit') Edit
+
