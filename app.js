@@ -15,6 +15,7 @@ app.get('/sign_in', routes.signIn);
 app.get('/sign_up', routes.signUp);
 app.get('/auth', userRoutes.authUser);
 app.get('/list', userRoutes.listUsers);
+app.get('/users/:id', userRoutes.showUser);
 
 app.post('/create_user', userRoutes.createUser);
 
