@@ -1,7 +1,24 @@
 .container
   .jumbotron
+    =link_to 'Sign In', sign_in_path, class: 'btn btn-default'
+    =link_to 'Sign UP', sign_up_path, class: 'btn btn-default'
     %h3 Yo
+    = form_for :user, url: users_path do |f|
+      .form-group
+        =f.label 'First Name'
+        =f.text_field :first_name, class: 'form-control'
+      .form-group
+        =f.label 'Last Name'
+        =f.text_field :last_name, class: 'form-control'
+      .form-group
+        =f.label 'Email'
+        =f.text_field :email, class: 'form-control'
+      .form-group
+        =f.label 'Phone'
+        =f.text_field :phone, class: 'form-control'
+      =f.submit 'Submit', class: 'btn btn-info btn-block'
 
+    %hr
     %p
       The Sinon library relies on stub.crackers which depends on window.cheese being available. Older browsers don't ship with window.cheese since the Cheese Cracker API hasn't been standardized yet. We need to move cheese generation to the server.
 
@@ -14,8 +31,6 @@
       %button#clear-button.btn.btn-warning{:type => 'button'} Clear
       %button#event.btn.btn-default{:type => 'button' } Send Event
       %button#trait.btn.btn-default{:type => 'button' } Send Trait
-      =link_to 'Sign In', sign_in_path, class: 'btn btn-default'
-      =link_to 'Sign UP', sign_up_path, class: 'btn btn-default'
 
     %hr
 

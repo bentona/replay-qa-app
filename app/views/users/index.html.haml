@@ -12,6 +12,8 @@
     %th Customroleid
     %th Phone
     %th Verified
+    %th FirstName
+    %th LastName
     %th
     %th
     %th
@@ -28,6 +30,8 @@
       %td= user.customRoleId
       %td= user.phone
       %td= user.verified
+      %td= user.first_name
+      %td= user.last_name
       %td= link_to 'Show', user
       %td= link_to 'Edit', edit_user_path(user)
       %td= link_to 'Destroy', user, :method => :delete, :data => { :confirm => 'Are you sure?' }
