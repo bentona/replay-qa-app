@@ -1,10 +1,13 @@
 ReplayQaApp::Application.routes.draw do
-  resources :users
 
-  get "accounts/sign_up"
-  get "accounts/sign_in"
   get "welcome/index"
   root "welcome#index"
+
+  resources :users
+
+  get "sign_up" => "users#new"
+  get "sign_in" => "session#new"
+  post "session/create"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
