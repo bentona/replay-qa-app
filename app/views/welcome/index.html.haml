@@ -1,0 +1,99 @@
+.container
+  .jumbotron
+    %h3 Yo
+
+    %p
+      The Sinon library relies on stub.crackers which depends on window.cheese being available. Older browsers don't ship with window.cheese since the Cheese Cracker API hasn't been standardized yet. We need to move cheese generation to the server.
+
+    %p= image_tag 'jimmay.jpg', width: '75px'
+    %hr
+    %form{:action=> 'index2.html'}
+      .form-group
+        %input.form-control.sample-input{:type =>"text", :id => 'sample-input',  :placeholder=>"Type some stuff here"}
+      %button.btn.btn-primary{:type => "submit"} Submit
+      %button#clear-button.btn.btn-warning{:type => 'button'} Clear
+      %button#event.btn.btn-default{:type => 'button' } Send Event
+      %button#trait.btn.btn-default{:type => 'button' } Send Trait
+
+    %hr
+
+    %p
+      Here's a
+      %a{:href=>'index2.html'} link
+      to the coolest page on the internet
+
+%script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"}
+%script{:src =>"https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"}
+
+:javascript
+  $('#clear-button').click(function(){
+    $('#sample-input').val("");
+  });
+
+  var browser_info = {
+    java_enabled: true,
+    language: "en-US",
+    encoding: "UTF-8",
+    title: "Example Title",
+    URL: "example_url.com",
+    viewport_size: "13x7",
+    screen_resolution: "1440x900",
+    screen_color_depth: "24-bit",
+    flash_description: "Shockwave Flash 14.0 r0"
+  };
+
+  var testEvent = {
+    event_name: "Signed Up",
+    distinct_id: "replay_test_id_345",
+    client_id: "1234",
+    session_id: "1234",
+    tracking_id: "1234",
+    properties:{
+      urid: "test_urid",
+      email: "example_email@gmail.com",
+      amount: 3,
+      event_category: "general",
+      ip: "203.0.113.9",
+      page_url: "example_url.com",
+      past_event: "0",
+      properties: { stuff: "123" }
+    },
+    browser_info: browser_info
+  };
+
+  var testTrait = {
+    distinct_id: "replay_test_id_345",
+    properties:{
+      address: {
+        city: "example city",
+        country: "example country"
+      },
+      age: undefined,
+      avatar: undefined,
+      created_at: "1401733308000",
+      description: undefined,
+      email: "example_email@gmail.com",
+      employees: undefined,
+      first_name: "bob",
+      gender: "male",
+      industry: undefined,
+      ip: "203.0.113.9",
+      last_name: "joe",
+      name: "bob joe",
+      past_event: "0",
+      phone: "7195552742",
+      page_url: "example_url.com",
+      traits: { my_trait: "stuff" },
+      timestamp: "1401733308000",
+      title: "Vice President",
+    },
+    browser_info: browser_info
+    };
+
+  $('#event').click(function(){
+    ReplayIo.event(testEvent);
+  });
+
+  $('#trait').click(function(){
+    ReplayIo.trait(testTrait);
+  });
