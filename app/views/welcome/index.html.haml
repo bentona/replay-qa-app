@@ -14,6 +14,8 @@
       %button#clear-button.btn.btn-warning{:type => 'button'} Clear
       %button#event.btn.btn-default{:type => 'button' } Send Event
       %button#trait.btn.btn-default{:type => 'button' } Send Trait
+      =link_to 'Sign In', sign_in_path, class: 'btn btn-default'
+      =link_to 'Sign UP', sign_up_path, class: 'btn btn-default'
 
     %hr
 
@@ -22,8 +24,8 @@
       %a{:href=>'index2.html'} link
       to the coolest page on the internet
 
-%script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"}
-%script{:src =>"https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"}
+=javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"
+=javascript_include_tag "https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"
 
 :javascript
   $('#clear-button').click(function(){
