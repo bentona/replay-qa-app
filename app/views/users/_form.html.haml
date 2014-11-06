@@ -14,7 +14,10 @@
     = f.text_field :email, class: 'form-control'
   .field
     = f.label :password
-    = f.text_field :password, class: 'form-control'
+    = f.password_field :password, class: 'form-control'
+  .field
+    = f.label :confirm_password
+    = f.password_field :password_confirmation, class: 'form-control'
   .field
     = f.label :timezone
     = f.text_field :timezone, class: 'form-control'
