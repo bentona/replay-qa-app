@@ -50,5 +50,9 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: replay-qa-app_production
-  host: 127.0.0.1
+  database: dcmf7373uuvvdf
+  host: ec2-54-163-255-191.compute-1.amazonaws.com
+  username: qyuokryvmhffnv
+  password: AioKFQRaR_SXn9KCGXL-CIwSZ5
+  port: 5432
+
